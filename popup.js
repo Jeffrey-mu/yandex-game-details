@@ -48,7 +48,6 @@ document.getElementById('getData').addEventListener('click', async () => {
       }
     });
   });
-插件
   try {
     // 等待菜单操作完成
     await openMenuPromise;
