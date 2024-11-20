@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "我的第一个Chrome插件",
+  "name": "yandex 游戏数据获取",
   "version": "1.0",
-  "description": "一个简单的Chrome扩展示例",
+  "description": "yandex 游戏数据获取",
   "permissions": [
     "activeTab",
     "scripting",
