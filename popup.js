@@ -120,10 +120,12 @@ document.getElementById('getData').addEventListener('click', async () => {
         resultDiv.innerHTML = '<div style="color: red; font-weight: bold; padding: 1rem;">该游戏不符合要求，必须是Yandex游戏</div>'
         return
       }
-
+      function sanitizeFileName(fileName) {
+        return fileName.replace(/[\\/:*?"<>|]/g, '-');
+    }
       resultDiv.innerHTML += `
           <div class="space-y-4 p-4 bg-white rounded shadow">
-            <h1 class="text-xl font-bold">${data.gameTitleText}</h1>
+            <h1 class="text-xl font-bold">${sanitizeFileName(data.gameTitleText)}</h1>
             <div class="flex items-start gap-2">
               <span class="font-semibold text-gray-700 w-24  text-nowrap">icon地址:</span>
               <span class="text-gray-600 break-all">${data.iconUrl.replace('size24', 'size256')}</span>
