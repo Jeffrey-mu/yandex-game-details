@@ -50,8 +50,12 @@ document.getElementById('getData').addEventListener('click', async () => {
   });
   try {
     // 等待菜单操作完成
-    await openMenuPromise;
-    
+    try {
+      await openMenuPromise;
+    } catch (error) {
+      console.error('Failed to open menu:', error);
+    }
+
     // 执行原有的数据获取代码
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
